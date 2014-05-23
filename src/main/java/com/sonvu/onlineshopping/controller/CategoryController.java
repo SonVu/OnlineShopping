@@ -25,6 +25,7 @@ public class CategoryController {
 
     @Autowired
     private ProductService productService;
+
     @RequestMapping(value = "/category/{id}/{pageNumber}")
     public String index(ModelMap model, @PathVariable Integer id, @PathVariable Integer pageNumber) {
         Category category = new Category();

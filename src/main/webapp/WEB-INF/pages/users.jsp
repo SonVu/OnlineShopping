@@ -30,10 +30,10 @@
             </thead>
             <tbody>
 
-            <c:forEach items="${a.content}" var="user">
+            <c:forEach items="${userList}" var="user">
                 <tr>
-                    <td>${user.name}</td>
-                    <td>${user.hits}</td>
+                    <td>${user.username}</td>
+                    <td>${user.userRole.id}</td>
 
                     <td>
                         <form:form action="delete/${user.id}" method="post"><input type="submit"

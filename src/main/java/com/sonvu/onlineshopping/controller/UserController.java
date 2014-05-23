@@ -21,9 +21,7 @@ public class UserController {
 
     @RequestMapping("/users")
     public String index(Model model) {
-        model.addAttribute("a", productService.findTopHits());
         model.addAttribute("userList", userService.findAll());
-        model.addAttribute("roleId", userService.findAll().get(0).getUserRole().getId());
         return "users";
     }
 }
