@@ -37,8 +37,8 @@ public class Product implements Serializable{
     private String tags;
 
     @Basic
-    @Column (name = "product_qty")
-    private Integer product_qty;
+    @Column (name = "quantity")
+    private Integer quantity;
 
     @Basic
     @Column (name = "hits")
@@ -88,12 +88,12 @@ public class Product implements Serializable{
         this.tags = tags;
     }
 
-    public Integer getProduct_qty() {
-        return product_qty;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setProduct_qty(Integer product_qty) {
-        this.product_qty = product_qty;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Integer getHits() {
@@ -112,11 +112,13 @@ public class Product implements Serializable{
         this.createdDate = createdDate;
     }
 
-    public Category getProductCategory() {
-        return productCategory;
+    public Integer getProductCategory() {
+        return productCategory.getId();
     }
 
-    public void setProductCategory(Category productCategory) {
-        this.productCategory = productCategory;
+    public void setProductCategory(Integer id) {
+        Category category = new Category();
+        category.setId(id);
+        this.productCategory = category;
     }
 }

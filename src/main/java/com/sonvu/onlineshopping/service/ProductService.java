@@ -45,4 +45,12 @@ public class ProductService {
     public Page<Product> findByCategoryId(Category category, Pageable pageable) {
         return productRepository.findByProductCategory(category, pageable);
     }
+
+    public void save(Product product) {
+        productRepository.save(product);
+    }
+
+    public void delete(Integer id) {
+        productRepository.delete(id);
+    }
 }

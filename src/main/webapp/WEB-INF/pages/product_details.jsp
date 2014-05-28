@@ -182,7 +182,7 @@
         </div>
     </form>
     <hr class="soft"/>
-    <h4>${product.product_qty} items in stock</h4>
+    <h4>${product.quantity} items in stock</h4>
     <form class="form-horizontal qtyFrm pull-right">
         <div class="control-group">
             <label class="control-label"><span>Color</span></label>

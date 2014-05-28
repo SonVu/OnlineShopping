@@ -2,6 +2,7 @@ package com.sonvu.onlineshopping.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Imperius on 5/18/2014.
@@ -14,9 +15,9 @@ public class Order {
     @Column (name = "id")
     private Integer id;
 
-    @Basic
-    @Column (name = "user_id")
-    private Integer userId;
+    @ManyToOne
+    @JoinColumn (name = "user_id")
+    private User user;
 
     @Basic
     @Column (name = "status")
@@ -38,6 +39,9 @@ public class Order {
     @Column (name = "ordered_on")
     private Date orderedDate;
 
+    @OneToMany (mappedBy = "order")
+    private List<OrderDetail> orderDetails;
+
     public Integer getId() {
         return id;
     }
@@ -46,12 +50,12 @@ public class Order {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getStatus() {
@@ -92,5 +96,13 @@ public class Order {
 
     public void setOrderedDate(Date orderedDate) {
         this.orderedDate = orderedDate;
+    }
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 }

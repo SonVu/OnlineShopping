@@ -1,6 +1,7 @@
 package com.sonvu.onlineshopping.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Imperius on 5/18/2014.
@@ -40,6 +41,9 @@ public class User {
     @ManyToOne
     @JoinColumn (name = "role")
     private Role userRole;
+
+    @OneToMany (mappedBy = "user")
+    private List<Order> orders;
 
     public Integer getId() {
         return id;
@@ -103,5 +107,13 @@ public class User {
 
     public void setUserRole(Role userRole) {
         this.userRole = userRole;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

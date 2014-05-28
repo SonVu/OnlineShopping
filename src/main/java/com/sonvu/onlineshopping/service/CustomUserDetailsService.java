@@ -20,7 +20,6 @@ import java.util.Collection;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired

@@ -13,13 +13,13 @@ public class OrderDetail {
     @Column (name = "id")
     private Integer id;
 
-    @Basic
-    @Column (name = "order_id")
-    private Integer orderId;
+    @ManyToOne
+    @JoinColumn (name = "order_id")
+    private Order order;
 
-    @Basic
-    @Column (name = "product_id")
-    private Integer productId;
+    @OneToOne
+    @JoinColumn (name = "product_id")
+    private Product product;
 
     @Basic
     @Column (name = "quantity")
@@ -37,20 +37,20 @@ public class OrderDetail {
         this.id = id;
     }
 
-    public Integer getOrderId() {
-        return orderId;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
-    public Integer getProductId() {
-        return productId;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public Integer getQuantity() {

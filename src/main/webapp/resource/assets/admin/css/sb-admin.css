@@ -327,3 +327,8 @@ table.dataTable thead .sorting:after {
 .show-grid {
     margin: 15px 0;
 }
+
+.table-borderless td,
+.table-borderless th {
+    border: 0 !important;
+}
